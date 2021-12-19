@@ -8,6 +8,8 @@ namespace DataAccess.Models
 {
     [Index(nameof(Name))]
     [Index(nameof(Species))]
+    
+    //The base class for the other modes
     public abstract class Animal
     {
         [Key]

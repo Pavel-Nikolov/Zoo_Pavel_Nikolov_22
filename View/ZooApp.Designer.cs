@@ -45,11 +45,13 @@ namespace View
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(400, 12);
+            this.dgvData.Location = new System.Drawing.Point(345, 12);
+            this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.Size = new System.Drawing.Size(388, 387);
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvData.Size = new System.Drawing.Size(443, 387);
             this.dgvData.TabIndex = 0;
             // 
             // btnCreate
@@ -60,6 +62,7 @@ namespace View
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Create new";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnInfo
             // 
@@ -69,6 +72,7 @@ namespace View
             this.btnInfo.TabIndex = 2;
             this.btnInfo.Text = "Get Detailed Info";
             this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnUpdate
             // 
@@ -78,6 +82,7 @@ namespace View
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Change";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -87,36 +92,46 @@ namespace View
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cbxMamals
             // 
             this.cbxMamals.AutoSize = true;
+            this.cbxMamals.Checked = true;
+            this.cbxMamals.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxMamals.Location = new System.Drawing.Point(40, 336);
             this.cbxMamals.Name = "cbxMamals";
             this.cbxMamals.Size = new System.Drawing.Size(68, 19);
             this.cbxMamals.TabIndex = 5;
             this.cbxMamals.Text = "Mamals";
             this.cbxMamals.UseVisualStyleBackColor = true;
+            this.cbxMamals.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
             // cbxBirds
             // 
             this.cbxBirds.AutoSize = true;
+            this.cbxBirds.Checked = true;
+            this.cbxBirds.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxBirds.Location = new System.Drawing.Point(40, 361);
             this.cbxBirds.Name = "cbxBirds";
             this.cbxBirds.Size = new System.Drawing.Size(52, 19);
             this.cbxBirds.TabIndex = 6;
             this.cbxBirds.Text = "Birds";
             this.cbxBirds.UseVisualStyleBackColor = true;
+            this.cbxBirds.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
             // cbxReptiles
             // 
             this.cbxReptiles.AutoSize = true;
+            this.cbxReptiles.Checked = true;
+            this.cbxReptiles.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxReptiles.Location = new System.Drawing.Point(40, 386);
             this.cbxReptiles.Name = "cbxReptiles";
             this.cbxReptiles.Size = new System.Drawing.Size(67, 19);
             this.cbxReptiles.TabIndex = 7;
             this.cbxReptiles.Text = "Reptiles";
             this.cbxReptiles.UseVisualStyleBackColor = true;
+            this.cbxReptiles.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
             // ZooApp
             // 
@@ -133,6 +148,7 @@ namespace View
             this.Controls.Add(this.dgvData);
             this.Name = "ZooApp";
             this.Text = "Zoo App";
+            this.Load += new System.EventHandler(this.ZooApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

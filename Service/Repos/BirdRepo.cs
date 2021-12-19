@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Service.Repos
 {
+    //The repo classes are responsible for comunication with the Database and executing the CRUD operations
     public static class BirdRepo
     {
+
         public static void Add(Bird bird)
         {
             using (ZooContext context = new ZooContext())
